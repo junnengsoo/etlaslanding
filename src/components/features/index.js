@@ -1,60 +1,55 @@
 import React from "react";
 import './index.css'
-import featureImg from '../../asset/featureImg.png'
-import shieldImg from '../../asset/shield.png'
-import truckImg from '../../asset/truck.png'
-import tvImg from '../../asset/tv.png'
-import puzzleImg from '../../asset/puzzle.png'
-import flexiblityImg from '../../asset/flexiblity.png'
 
+const features = [
+    {
+        icon: '🛡️',
+        title: 'Scalable access control',
+        desc: 'Manage every door from a single dashboard. Set granular access levels, integrate SSO, and scale from one room to an entire portfolio without changing platforms.',
+    },
+    {
+        icon: '🔌',
+        title: 'Powerful integrations',
+        desc: 'Connect your existing security cameras, alarm systems, and visitor management tools. Etlas unifies your security stack so everything works together.',
+    },
+    {
+        icon: '🌐',
+        title: 'Access from anywhere',
+        desc: 'Manage your sites from any modern browser — no client software required. Grant or revoke access, view audit logs, and respond to alerts in real time.',
+    },
+    {
+        icon: '⚙️',
+        title: 'Flexible hardware',
+        desc: 'Our control boards are designed in-house. Use them for access control, alarm systems, or custom signalling — one hardware type for every requirement.',
+    },
+    {
+        icon: '📊',
+        title: 'Audit logs & analytics',
+        desc: 'Full event history for every door and user. Generate compliance reports, investigate incidents, and track occupancy with built-in analytics.',
+    },
+    {
+        icon: '🧩',
+        title: 'Modular licensing',
+        desc: 'Select only the features you need — no bloated licensing bundles. Deploy on-premise or on our cloud; the experience is identical either way.',
+    },
+]
 
 export default function Features(){
     return(
-        <div id="etlas_features" className="features_section" >
-            <h4>Features</h4>
-            <div className="etlas_features">
-                <div className="features_box">
-                    <div className="feature">
-                        <div><img alt='' src={shieldImg} /></div>
-                        <h5>Unified Security Platform</h5>
-                        <p>A single web-based portal to access all your security needs. View and configure access control, alarm systems, video recorders and more, all from a unified platform.</p>
-                    </div>
-            
-                
-                    <div className="feature">
-                    <div><img alt='' src={truckImg} /></div>
-                        <h5>Access from Anywhere </h5>
-                        <p>Using modern browsers like Chrome, Edge and Mozilla, access Etlas from anywhere with almost any device. No client software required on local machines.</p>
-                    </div>
-                </div>
-                <div className="feature_img">
-                    <img alt='' src={featureImg}/>
-                </div>
-
-                <div className="features_box_row_2">
-                    <div className="feature_row_2">
-                    <div><img alt='' src={flexiblityImg} /></div>
-                        <h5>Flexibility </h5>
-                        <p>Use our control boards for access control, alarm  systems or general signaling to secondary systems. A single type of hardware to simplify your implementation while maintaining the ability for complex customisations.</p>
-                    </div>
-                
-                
-                    <div className="feature_row_2">
-                    <div><img alt='' src={tvImg} /></div>
-                        <h5>Modern. Intuitive. User-centric</h5>
-                        <p>We strive to provide the most intuitive and modern user interface in the market. Get started with minimal onboarding and training.</p>
-                    </div>
-                
-        
-                    <div className="feature_row_2">
-                    <div><img alt='' src={puzzleImg} /></div>
-                        <h5>Modularity </h5>
-                        <p>Select only the features you require with no complex licensing structures. Deploy on-premise or on our platform; the user experience will be completely the same.</p>
-                    </div>
-                </div>
-                
-        
+        <section id="etlas_features" className="features_section">
+            <div className="features_header">
+                <h4>Everything you need to secure your space</h4>
+                <p>A unified platform built for modern security teams — from a single office to a nationwide estate.</p>
             </div>
-        </div>
+            <div className="features_grid">
+                {features.map((f, i) => (
+                    <div key={i} className="feature_card">
+                        <span className="feature_card_icon">{f.icon}</span>
+                        <h5>{f.title}</h5>
+                        <p>{f.desc}</p>
+                    </div>
+                ))}
+            </div>
+        </section>
     )
 }

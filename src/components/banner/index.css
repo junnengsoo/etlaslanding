@@ -3,182 +3,302 @@
     src: url(../../fonts/Montserrat-Regular.ttf);
 }
 
-body{overflow-x: hidden;}
+body { overflow-x: hidden; }
 
-
-.banner_section{
+/* ── Hero section ── */
+/* nav-wrapper height: ~78px (announcement 32px + nav 46px) */
+.banner_section {
     width: 100%;
+    min-height: 88vh;
+    background-color: #080f1e;
     display: flex;
-    flex-direction: column;
     align-items: center;
     position: relative;
+    padding: 5em 10%;
+    padding-top: calc(46px + 5em);
+    overflow: hidden;
 }
 
-.banner_section::before{
-    content: '';
-    width: 150px;
-    height: 150px;
-    background-color: #63C6F1;
-    border-radius: 15px 100px 15px 15px ;
+/* ── Floating device cards (background layer) ── */
+.banner_bg_devices {
     position: absolute;
-    bottom: 0;
-    left: -70px;
+    inset: 0;
+    pointer-events: none;
 }
 
-.banner_txt{
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.banner_txt h3{
-    font-size: 80px;
-    font-family: 'main_font';
-    color: #000;
-    text-align: center;
-    margin: 0;
-    padding: 6px 0;
-    font-weight: 700;
-}
-
-.banner_txt p{
-    font-size: 24px;
-    font-family: 'main_font';
-    color: #000;
-    text-align: center;
-    margin: 0;
-    padding: 1.3em 0;
-    font-weight: 500;
-}
-
-.banner_txt div{
-    width: 70%;
+.device_card {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 16px;
+    backdrop-filter: blur(6px);
+    padding: 20px 24px;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
+    animation: floatCard 8s ease-in-out infinite;
 }
 
-.banner_txt div input{
+.device_card_inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.device_card_icon {
+    font-size: 36px;
+    opacity: 0.7;
+}
+
+.device_card_img {
+    width: 120px;
+    object-fit: contain;
+    opacity: 0.45;
+    filter: brightness(1.2);
+}
+
+.device_card_label {
+    font-family: 'main_font';
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+/* Individual card positions & staggered animation delays */
+.device_card--1 {
+    top: 12%;
+    right: 8%;
+    width: 140px;
+    animation-duration: 7s;
+    animation-delay: 0s;
+}
+
+.device_card--2 {
+    top: 55%;
+    right: 5%;
+    width: 140px;
+    animation-duration: 9s;
+    animation-delay: -2s;
+}
+
+.device_card--3 {
+    top: 20%;
+    right: 22%;
+    width: 190px;
+    animation-duration: 10s;
+    animation-delay: -4s;
+}
+
+.device_card--4 {
+    bottom: 12%;
+    right: 16%;
+    width: 140px;
+    animation-duration: 8s;
+    animation-delay: -1.5s;
+}
+
+.device_card--5 {
+    top: 70%;
+    right: 34%;
+    width: 155px;
+    animation-duration: 11s;
+    animation-delay: -3s;
+}
+
+/* Gentle float keyframe */
+@keyframes floatCard {
+    0%   { transform: translateY(0px) rotate(0deg);   opacity: 0.65; }
+    30%  { transform: translateY(-14px) rotate(1deg); opacity: 0.8; }
+    60%  { transform: translateY(-6px) rotate(-1deg); opacity: 0.7; }
+    100% { transform: translateY(0px) rotate(0deg);   opacity: 0.65; }
+}
+
+/* Subtle right-side glow to set cards apart from text */
+.banner_section::after {
+    content: '';
+    position: absolute;
+    top: 10%;
+    right: 0;
+    width: 55%;
+    height: 80%;
+    background: radial-gradient(ellipse at right center, rgba(59, 130, 246, 0.12) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* ── Foreground text ── */
+.banner_txt {
+    position: relative;
+    z-index: 1;
+    max-width: 580px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.banner_txt h3 {
+    font-size: 58px;
+    font-family: 'main_font';
+    color: #ffffff;
+    text-align: left;
+    margin: 0 0 0.5em 0;
+    line-height: 1.15;
+    font-weight: 700;
+}
+
+.banner_txt p {
+    font-size: 19px;
+    font-family: 'main_font';
+    color: #94a3b8;
+    text-align: left;
+    margin: 0 0 2em 0;
+    line-height: 1.75;
+    font-weight: 400;
+}
+
+.banner_actions {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    flex-wrap: wrap;
+}
+
+.banner_actions button {
+    height: 52px;
+    background-color: #3b82f6;
+    padding: 0 2em;
     border: none;
-    outline: none;
-    box-shadow: -3px 5.2px 20px rgba(0, 0, 0, .15);
-    width: 100%;
-    font-size: 24px;
-     font-family: 'main_font';
-     padding: 0 0 0 1.4em;
-    height: 80px;
-    border-radius: 10px;
-}
-
-.banner_txt div button{
-    height: 60px;
-    background-color: #1E3A39;
-    padding: 0 1.5em;
-    position: relative;
-    border-radius: 10px;
-    
+    border-radius: 8px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
-    font-family: 'main_font';
-    font-weight: 600;
-    font-size: 26px;
-    transition: .3s;
+    transition: background-color 0.2s;
 }
 
-.banner_txt div a{
+.banner_actions button:hover {
+    background-color: #2563eb;
+}
 
-    font-size: 20px;
+.banner_actions button a {
+    font-size: 16px;
     font-family: 'main_font';
-
     font-weight: 600;
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
 }
 
-.banner_txt div button:hover{
-    background-color: rgba(30, 58, 57 ,.9);
-
+.banner_learn_more {
+    font-size: 16px;
+    font-family: 'main_font';
+    font-weight: 600;
+    color: #94a3b8;
+    text-decoration: none;
+    transition: color 0.2s;
 }
 
-.banner_img{
-    position: relative;
-    width: 100%;
+.banner_learn_more:hover {
+    color: #ffffff;
+}
+
+/* ── Client logo strip ── */
+.banner_clients {
+    margin-top: 3.5em;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    gap: 14px;
 }
 
-.banner_main_img{
-    background: url(../../asset/bannerBG.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    padding: 4em 0;
-    width: 65%;
-    background-position: center;
+.banner_clients_label {
+    font-family: 'main_font';
+    font-size: 12px;
+    font-weight: 500;
+    color: #475569;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
 }
 
-.banner_icons{
-    position: absolute;
-    width: 100%;
+.banner_clients_logos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
-.banner_mob_icons{
-    display: none;
+.client_logo_pill {
+    font-family: 'main_font';
+    font-size: 13px;
+    font-weight: 600;
+    color: #64748b;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 6px;
+    padding: 6px 14px;
+    white-space: nowrap;
+    transition: color 0.2s, border-color 0.2s;
 }
 
+.client_logo_pill:hover {
+    color: #94a3b8;
+    border-color: rgba(255,255,255,0.15);
+}
+
+/* ── Responsive ── */
 @media (max-width:1024px) {
-    .banner_txt{
-        width: 100%;
+    .banner_txt h3 {
+        font-size: 44px;
     }
 
-    .banner_txt div{
-        width: 100%;
+    .banner_section {
+        padding: 5em 6%;
+    }
+
+    .device_card--3 {
+        right: 12%;
+    }
+
+    .device_card--5 {
+        display: none;
     }
 }
 
 @media (max-width:700px) {
-
-   
-    .banner_icons{
-        display: none;
-    }
-    .banner_txt h3{
-        font-size: 40px;
+    .banner_section {
+        padding: 5em 1.5em 8em;
+        min-height: 70vh;
+        align-items: flex-start;
     }
 
-    .banner_txt p{
-        font-size: 18px;
+    .banner_txt h3 {
+        font-size: 34px;
     }
 
-    .banner_txt div button{
-        position: static;
-        margin: 0 0 0 0;
-        height: 60px;
-        width: 200px;
-        padding: 0;
+    .banner_txt p {
+        font-size: 16px;
     }
 
-    .banner_main_img{
-        width: 100%;
-    }
-
-    .banner_txt div{
+    .banner_actions {
         flex-direction: column;
-    }
-    .banner_txt div input{
-        font-size: 18px;
-    }
-
-    .banner_main_img{
-        background-size: 85%;
+        align-items: flex-start;
+        gap: 1em;
     }
 
-    .banner_section::before{
-        display: none;
+    .banner_actions button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* On mobile, stack cards at the bottom */
+    .device_card--1 { top: auto; bottom: 6%; right: 60%; width: 110px; }
+    .device_card--2 { top: auto; bottom: 6%; right: 2%;  width: 110px; }
+    .device_card--3 { top: auto; bottom: 6%; right: 30%; width: 130px; }
+    .device_card--4 { display: none; }
+    .device_card--5 { display: none; }
+}
+
+@media (max-width:550px) {
+    .banner_txt h3 {
+        font-size: 28px;
     }
 }

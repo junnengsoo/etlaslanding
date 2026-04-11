@@ -1,194 +1,178 @@
-* {
-    box-sizing: border-box;
-  }
+* { box-sizing: border-box; }
 
-  @font-face {
-      font-family: 'main_font';
-      src: url(../../fonts/Montserrat-Regular.ttf);
-  }
-  
-  body {
-    margin: 0px;
-    font-family: 'segoe ui';
-  }
-  
-  .nav {
-    padding: 20px 5em;
+@font-face {
+    font-family: 'main_font';
+    src: url(../../fonts/Montserrat-Regular.ttf);
+}
+
+body { margin: 0; font-family: 'segoe ui'; }
+
+/* ── Sticky wrapper ── */
+.nav-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ── Main nav ── */
+.nav {
     width: 100%;
-    background-color: #fff;
-
-    position: relative;
+    height: 46px;
+    background-color: #0f172a;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    padding: 0 4em;
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
-  }
-  
-  .nav > .nav-header {
-    display: inline;
-  }
-  
-  .nav > .nav-header > .nav-title {
-    display: inline-block;
-    font-size: 40px;
-    font-family: 'main_font';
-    color: #000;
+}
+
+/* Left – logo */
+.nav-logo {
     display: flex;
     align-items: center;
-    font-weight: 700;
-  }
-
-  .nav-title img{
-      margin-right: 15px;
-      width: 73px;
-      height: 73px;
-  }
-  
-  .nav > .nav-btn {
-    display: none;
-  }
-  
-  .nav > .nav-links {
-    display: inline;
-    float: right;
-    font-size: 18px;
-  }
-  
-  .nav > .nav-links > a {
-    display: inline-block;
-    padding: 8px ;
-    font-size: 20px;
-    margin: 0 1em;
+    gap: 8px;
     font-family: 'main_font';
-    font-weight: 600;
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    flex: 1;
     text-decoration: none;
-    color: #000;
-    transition: .3s;
-  }
-  
-  .nav > .nav-links > a:hover {
-    color: rgba(0, 0, 0, .6);
-  }
-  
-  .nav > #nav-check {
+}
+
+.nav-logo img {
+    width: 28px;
+    height: 28px;
+}
+
+/* Center – links */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0.2em;
+    flex: 2;
+    justify-content: center;
+}
+
+.nav-links a {
+    font-family: 'main_font';
+    font-size: 13px;
+    font-weight: 500;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 4px 12px;
+    border-radius: 6px;
+    transition: color 0.15s, background 0.15s;
+    white-space: nowrap;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+/* Right – CTA + hamburger */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 0;
+    justify-content: flex-end;
+    padding-right: 1em;
+}
+
+.nav-right > button:first-child {
+    height: 32px;
+    background-color: #3b82f6;
+    border: none;
+    border-radius: 20px;
+    padding: 0 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.15s;
+}
+
+.nav-right > button:first-child:hover {
+    background-color: #2563eb;
+}
+
+.nav-right > button:first-child a {
+    font-family: 'main_font';
+    font-size: 13px;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+/* Hamburger (mobile only) */
+.nav-hamburger {
     display: none;
-  }
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    width: 32px;
+    height: 32px;
+}
 
-  .nav-links button{
-      background-color: #1E3A39;
-      border: none;
-      cursor: pointer;
-      border-radius: 10px;
-      height: 60px;
-      padding: 0 1.5em;
-      display: flex;
-      align-items: center;
-      font-weight: 600;
-      display: inline-block;
-      justify-content: center;
-      color: #fff;
-      font-size: 20px;
-      font-family: 'main_font';
-      transition: .3s;
-    }
-    
-    .nav-links button:hover{
-        
-        background-color: rgba(30, 58, 57 ,.8);
+.nav-hamburger span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: #94a3b8;
+    border-radius: 2px;
+    transition: background 0.15s;
+}
+
+.nav-hamburger:hover span {
+    background-color: #ffffff;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .nav-hamburger { display: flex; }
+
+    /* Hide links by default on mobile */
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: #0f172a;
+        border-bottom: 1px solid rgba(255,255,255,0.07);
+        padding: 12px 4em 16px;
+        gap: 4px;
     }
 
-    .nav-links a{
-
-      font-size: 20px;
-      font-family: 'main_font';
-  
-      font-weight: 600;
-      color: #fff;
-      text-decoration: none;
-  }
-
-  @media (max-width:1024px) {
-    .nav > .nav-links > a{
-        margin: 0 .5em;
-        font-size: 17px;
+    .nav-links--open {
+        display: flex;
     }
 
-    .nav-links button{
-        font-size: 17px;
+    .nav-links a {
+        padding: 8px 12px;
+        width: 100%;
     }
 
-    .nav > .nav-header > .nav-title {
-        font-size: 25px;
-       
-      }
-    
-      .nav-title img{
-         
-          width: 40px;
-          height: 40px;
-          margin-right: 10px;
-      }
-
-      .nav{
-          padding: 20px 3em;
-      }
-      
-  }
-  
-
-  
-      
-  
-  
-  @media (max-width:700px) {
-    .nav > .nav-btn {
-      display: inline-block;
-      /* position: absolute; */
-      right: 0px;
-      top: 0px;
+    /* Hide desktop CTA on mobile, keep hamburger */
+    .nav-right > button:first-child {
+        display: none;
     }
-    .nav > .nav-btn > label {
-      display: inline-block;
-      width: 50px;
-      height: 50px;
-      padding: 13px;
-    }
-  
-    .nav > .nav-btn > label > span {
-      display: block;
-      width: 25px;
-      height: 10px;
-      border-top: 2px solid #000;
-    }
-    .nav > .nav-links {
-      position: absolute;
-      display: block;
-      width: 100%;
-      z-index: 99;
-      background-color: #fff;
-      height: 0px;
-      transition: all 0.3s ease-in;
-      overflow-y: hidden;
-      top: 75px;
-      left: 0px;
-    }
-    .nav > .nav-links > a   ,  .nav-links button{
-      display: block;
-      margin: 1.5em 1em;
-      
-    }
-    .nav > #nav-check:not(:checked) ~ .nav-links {
-      height: 0px;
-    }
-    .nav > #nav-check:checked ~ .nav-links {
-      height: calc(45vh - 50px);
-      overflow-y: auto;
-      /* background-color: #fff; */
-    }
-  }
 
 
-  @media (max-width:550px) {
-      .nav{
-          padding: 20px 1em;
-      }
-  }
+}
+
+@media (max-width: 480px) {
+    .nav { padding: 0 1.5em; }
+}

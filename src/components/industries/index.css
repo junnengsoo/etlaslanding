@@ -1,0 +1,121 @@
+@font-face {
+    font-family: 'main_font';
+    src: url(../../fonts/Montserrat-Regular.ttf);
+}
+
+.industries_section {
+    width: 100%;
+    background-color: #f8fafc;
+    padding: 6em 8%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.industries_header {
+    text-align: center;
+    max-width: 580px;
+    margin-bottom: 3em;
+}
+
+.industries_header h4 {
+    font-family: 'main_font';
+    font-size: 40px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 0.5em 0;
+    line-height: 1.2;
+}
+
+.industries_header p {
+    font-family: 'main_font';
+    font-size: 17px;
+    color: #475569;
+    margin: 0;
+    line-height: 1.7;
+}
+
+.industries_grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5em;
+}
+
+.industry_card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.industry_card:hover {
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    transform: translateY(-3px);
+}
+
+.industry_card_emoji {
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
+    font-size: 56px;
+    padding: 1.4em 0;
+    text-align: center;
+}
+
+.industry_card_body {
+    padding: 1.6em 1.8em 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6em;
+    flex: 1;
+}
+
+.industry_card_body h5 {
+    font-family: 'main_font';
+    font-size: 19px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0;
+}
+
+.industry_card_body p {
+    font-family: 'main_font';
+    font-size: 14px;
+    color: #475569;
+    margin: 0;
+    line-height: 1.7;
+    flex: 1;
+}
+
+.industry_card_link {
+    font-family: 'main_font';
+    font-size: 14px;
+    font-weight: 600;
+    color: #3b82f6;
+    text-decoration: none;
+    margin-top: 0.4em;
+    transition: color 0.15s;
+}
+
+.industry_card_link:hover {
+    color: #2563eb;
+}
+
+@media (max-width: 900px) {
+    .industries_grid {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+    }
+
+    .industries_header h4 {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .industries_section {
+        padding: 4em 1.5em;
+    }
+}

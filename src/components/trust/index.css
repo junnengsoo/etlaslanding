@@ -1,0 +1,73 @@
+@font-face {
+    font-family: 'main_font';
+    src: url(../../fonts/Montserrat-Regular.ttf);
+}
+
+.trust_section {
+    width: 100%;
+    background-color: #0f172a;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding: 2.5em 8%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.6em;
+}
+
+.trust_label {
+    font-family: 'main_font';
+    font-size: 12px;
+    font-weight: 600;
+    color: #475569;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 0;
+}
+
+.trust_badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.2em 2.5em;
+}
+
+.trust_badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.trust_badge_icon {
+    font-size: 22px;
+    opacity: 0.8;
+}
+
+.trust_badge_txt {
+    display: flex;
+    flex-direction: column;
+}
+
+.trust_badge_name {
+    font-family: 'main_font';
+    font-size: 13px;
+    font-weight: 700;
+    color: #e2e8f0;
+    line-height: 1.2;
+}
+
+.trust_badge_sub {
+    font-family: 'main_font';
+    font-size: 11px;
+    color: #475569;
+}
+
+@media (max-width: 600px) {
+    .trust_section {
+        padding: 2.5em 1.5em;
+    }
+
+    .trust_badges {
+        gap: 1em 1.5em;
+    }
+}

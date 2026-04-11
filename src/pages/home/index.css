@@ -3,108 +3,115 @@
     src: url(../../fonts/Montserrat-Regular.ttf);
 }
 
-.home_page{
-    background-color: #F6FCFE;
-    padding: 2em 3em;
+.home_page {
+    background-color: #f8fafc;
+    padding: 0 8%;
     overflow-x: hidden;
     width: 100%;
 }
 
-.ourCode_txt{
-    width: 40%;
-}
-
-.ourCode_txt h4{
-    font-size: 50px;
-    font-family: 'main_font';
-    font-weight: bold;
-    margin: 0;
-    padding: 8px;
-    color: #000;
-}
-
-.ourCode_txt p{
-    font-size: 20px;
-    font-family: 'main_font';
-    color: #000;
-    line-height: 33px;
-    font-weight: 500;
-}
-
-.our_code_img{
-    width: 50%;
-    padding: 0em 2em;
-}
-
-.our_code_img img{
-    width: 100%;
-}
-
-.our_code{
+/* ── All-in-one / Our Code section ── */
+.our_code {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: relative;
-    padding: 3em 0em;
+    gap: 4em;
+    padding: 6em 0;
 }
 
-.our_code::after{
-    content: '';
-    width: 150px;
-    position: absolute;
-    top: 0;
-    right: -80px;
-    height: 150px;
-    background-color: #AFDCC9;
-    border-radius: 15px 100px 15px 15px;
+.our_code_img {
+    width: 50%;
+    flex-shrink: 0;
 }
 
-@media (max-width:1024px) {
+.our_code_img img {
+    width: 100%;
+    border-radius: 12px;
+}
 
-    .ourCode_txt{
-        width: 50%;
+.ourCode_txt {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6em;
+}
+
+.ourCode_eyebrow {
+    font-family: 'main_font';
+    font-size: 12px;
+    font-weight: 700;
+    color: #3b82f6;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 0;
+}
+
+.ourCode_txt h4 {
+    font-family: 'main_font';
+    font-size: 40px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.ourCode_txt p {
+    font-family: 'main_font';
+    font-size: 16px;
+    color: #475569;
+    line-height: 1.75;
+    margin: 0.4em 0 0 0;
+}
+
+.ourCode_ctas {
+    display: flex;
+    gap: 2em;
+    margin-top: 0.8em;
+    flex-wrap: wrap;
+}
+
+.ourCode_ctas a {
+    font-family: 'main_font';
+    font-size: 14px;
+    font-weight: 600;
+    color: #3b82f6;
+    text-decoration: none;
+    transition: color 0.15s;
+}
+
+.ourCode_ctas a:hover {
+    color: #2563eb;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+    .home_page {
+        padding: 0 6%;
     }
 
-    .ourCode_txt h4{
-        font-size: 35px;
-    }
-    .home_page{
-        padding: 2em 5em;
-    }
-
-    .ourCode_txt p{
-        font-size: 18px;
+    .ourCode_txt h4 {
+        font-size: 30px;
     }
 }
-@media (max-width:700px) {
-    .our_code{
+
+@media (max-width: 700px) {
+    .our_code {
         flex-direction: column;
+        padding: 4em 0;
+        gap: 2em;
     }
 
-    .our_code_img{
+    .our_code_img {
         width: 100%;
     }
 
-    .ourCode_txt{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .ourCode_txt p,.ourCode_txt h4{
-        text-align: center;
+    .ourCode_txt h4 {
+        font-size: 26px;
     }
 }
 
-@media (max-width:550px) {
-    .home_page{
-        padding: 2em 1.5em;
-    }
-}
-
-@media (max-width:1300px) {
-    .our_code::after{
-        display: none;
+@media (max-width: 550px) {
+    .home_page {
+        padding: 0 1.5em;
     }
 }
