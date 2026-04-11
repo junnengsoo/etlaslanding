@@ -20,7 +20,7 @@ export default function Banner(){
                     {/*<input id="email" placeholder="Email address ...." onInput={e => setEmail(e.target.value)}/>
                     
                     <a href={"https://wa.me/6594569932/?text=Hi!"}><img alt='' src={whatsappButton} /></a>*/}
-                   <button><a href="https://wa.me/6594569932/?text=Hi!">Get in touch</a></button>
+                   <button><a href="https://wa.me/6594569932/?text=Hi!">Get in touch with us</a></button>
                    </div>
             </div>
 
