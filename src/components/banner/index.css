@@ -3,182 +3,147 @@
     src: url(../../fonts/Montserrat-Regular.ttf);
 }
 
-body{overflow-x: hidden;}
+body { overflow-x: hidden; }
 
-
+/* ── Hero section — dark background, full-width ── */
 .banner_section{
     width: 100%;
+    background-color: #1b293a;
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
+    padding: 6em 0 0;
 }
 
-.banner_section::before{
-    content: '';
-    width: 150px;
-    height: 150px;
-    background-color: #63C6F1;
-    border-radius: 15px 100px 15px 15px ;
-    position: absolute;
-    bottom: 0;
-    left: -70px;
+/* ── Inner width constraint ── */
+.banner_inner{
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 4em;
+    margin: 0 auto;
 }
 
+/* ── Left-aligned text block ── */
 .banner_txt{
-    width: 80%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    text-align: left;
+    max-width: 640px;
 }
 
 .banner_txt h3{
-    font-size: 80px;
+    font-size: 64px;
     font-family: 'main_font';
-    color: #000;
-    text-align: center;
+    color: #fff;
     margin: 0;
-    padding: 6px 0;
+    padding: 0 0 0.3em;
     font-weight: 700;
+    line-height: 1.15;
 }
 
 .banner_txt p{
-    font-size: 24px;
+    font-size: 20px;
     font-family: 'main_font';
-    color: #000;
-    text-align: center;
+    color: rgba(255,255,255,.75);
     margin: 0;
-    padding: 1.3em 0;
+    padding: 0 0 2em;
     font-weight: 500;
+    line-height: 1.7;
 }
 
 .banner_txt div{
-    width: 70%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
-.banner_txt div input{
-    border: none;
-    outline: none;
-    box-shadow: -3px 5.2px 20px rgba(0, 0, 0, .15);
-    width: 100%;
-    font-size: 24px;
-     font-family: 'main_font';
-     padding: 0 0 0 1.4em;
-    height: 80px;
-    border-radius: 10px;
+    justify-content: flex-start;
+    padding-bottom: 3em;
 }
 
 .banner_txt div button{
-    height: 60px;
-    background-color: #1E3A39;
-    padding: 0 1.5em;
-    position: relative;
+    height: 52px;
+    background-color: #63C6F1;
+    padding: 0 2em;
+    border: none;
     border-radius: 10px;
-    
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
+    color: #1b293a;
     font-family: 'main_font';
-    font-weight: 600;
-    font-size: 26px;
+    font-weight: 700;
+    font-size: 17px;
     transition: .3s;
 }
 
+.banner_txt div button:hover{
+    background-color: #AFDCC9;
+}
+
 .banner_txt div a{
-
-    font-size: 20px;
+    font-size: 17px;
     font-family: 'main_font';
-
-    font-weight: 600;
-    color: #fff;
+    font-weight: 700;
+    color: #1b293a;
     text-decoration: none;
 }
 
-.banner_txt div button:hover{
-    background-color: rgba(30, 58, 57 ,.9);
-
-}
-
+/* ── Product screenshot — sits at bottom of hero ── */
 .banner_img{
     position: relative;
     width: 100%;
+    max-width: 1000px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
 }
 
 .banner_main_img{
-    background: url(../../asset/bannerBG.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    padding: 4em 0;
-    width: 65%;
-    background-position: center;
+    width: 90%;
+    border-radius: 12px 12px 0 0;
+    display: block;
+    box-shadow: 0 -8px 40px rgba(0,0,0,.25);
 }
 
 .banner_icons{
     position: absolute;
     width: 100%;
+    pointer-events: none;
 }
 
-.banner_mob_icons{
-    display: none;
+.banner_mob_icons{ display: none; }
+
+/* ── Responsive ── */
+@media (max-width:1200px) {
+    .banner_inner{
+        padding: 0 2.5em;
+    }
 }
 
 @media (max-width:1024px) {
-    .banner_txt{
-        width: 100%;
-    }
-
-    .banner_txt div{
-        width: 100%;
+    .banner_txt h3{
+        font-size: 48px;
     }
 }
 
 @media (max-width:700px) {
-
-   
+    .banner_section{
+        padding: 4em 0 0;
+    }
+    .banner_inner{
+        padding: 0 1.5em;
+    }
     .banner_icons{
         display: none;
     }
     .banner_txt h3{
-        font-size: 40px;
+        font-size: 34px;
     }
-
     .banner_txt p{
-        font-size: 18px;
+        font-size: 16px;
     }
-
-    .banner_txt div button{
-        position: static;
-        margin: 0 0 0 0;
-        height: 60px;
-        width: 200px;
-        padding: 0;
-    }
-
     .banner_main_img{
         width: 100%;
-    }
-
-    .banner_txt div{
-        flex-direction: column;
-    }
-    .banner_txt div input{
-        font-size: 18px;
-    }
-
-    .banner_main_img{
-        background-size: 85%;
-    }
-
-    .banner_section::before{
-        display: none;
+        border-radius: 8px 8px 0 0;
     }
 }

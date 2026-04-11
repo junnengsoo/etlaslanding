@@ -10,27 +10,26 @@ import AboutSection from "../../components/about";
 
 export default function Home (){
     return(
-        <div>
+        <div className="home_page">
             <Navbar/>
 
-            <div className="home_page">
-                <Banner/>
-                <Features/>
+            <Banner/>
+            <Features/>
 
-                <div id='solution' className="our_code ">
+            <div id='solution' className="our_code">
+                <div className="our_code_inner">
                     <div className="our_code_img">
                         <img alt='' src={ourCodeImg} />
                     </div>
-
                     <div className="ourCode_txt">
                         <h4>Our Code, Our Hardware</h4>
                         <p>Our control boards are designed and developed in-house by Etlas engineers – we own our source code and hardware. This provides you with the customisability for complex requirements. </p>
                     </div>
                 </div>
-              
-                <AboutSection/>
-                <MessageForm/>
             </div>
+
+            <AboutSection/>
+            <MessageForm/>
 
             <Footer/>
         </div>
