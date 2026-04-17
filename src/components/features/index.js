@@ -1,78 +1,61 @@
 import React from "react";
 import './index.css'
-import shieldImg from '../../asset/shield.png'
-import truckImg from '../../asset/truck.png'
-import tvImg from '../../asset/tv.png'
-import puzzleImg from '../../asset/puzzle.png'
-import flexiblityImg from '../../asset/flexiblity.png'
-import featureImg from '../../asset/featureImg.png'
+import accessControlCard from '../../asset/accessControlCard.png'
+import cctvCard from '../../asset/CCTVCard.png'
+import visitorManagementCard from '../../asset/VisitorManagementSystemCard.png'
+import timeAttendanceCard from '../../asset/TimeAttendanceCard.png'
+import etlasBoardImg from '../../asset/etlasBoard.png'
 
-const features = [
+const stack = [
     {
-        icon: shieldImg,
-        title: 'Unified Security Platform',
-        desc: 'A single web-based portal to access all your security needs. View and configure access control, alarm systems, video recorders and more, all from a unified platform.'
+        icon: accessControlCard,
+        title: 'Access Control',
+        description: 'Control who enters your site, when, and where — from a single dashboard. Support for card, PIN, mobile, and biometric credentials means every person gets the right level of access. Revoke or grant access instantly, from anywhere.',
     },
     {
-        icon: truckImg,
-        title: 'Access from Anywhere',
-        desc: 'Using modern browsers like Chrome, Edge and Mozilla, access Etlas from anywhere with almost any device. No client software required on local machines.'
+        icon: cctvCard,
+        title: 'Video Surveillance (CCTV)',
+        description: 'Monitor every corner of your site with live and recorded footage, unified inside the Etlas dashboard. When an alert fires, jump directly to the linked footage — no switching between systems, no wasted time.',
     },
     {
-        icon: flexiblityImg,
-        title: 'Flexibility',
-        desc: 'Use our control boards for access control, alarm systems or general signaling to secondary systems. A single type of hardware to simplify your implementation.'
+        icon: visitorManagementCard,
+        title: 'Visitor Management',
+        description: 'Pre-register visitors before they arrive and generate passes automatically at check-in. Every visit is logged with a full audit trail, keeping you compliant and in control.',
     },
     {
-        icon: tvImg,
-        title: 'Modern. Intuitive. User-centric',
-        desc: 'We strive to provide the most intuitive and modern user interface in the market. Get started with minimal onboarding and training.'
+        icon: timeAttendanceCard,
+        title: 'Time & Attendance',
+        description: 'Attendance is tracked automatically from access events — no manual registers, no separate hardware. Export payroll-ready reports and sync directly with your HR system.',
     },
     {
-        icon: puzzleImg,
-        title: 'Modularity',
-        desc: 'Select only the features you require with no complex licensing structures. Deploy on-premise or on our platform; the user experience will be completely the same.'
-    }
+        icon: etlasBoardImg,
+        title: 'Integrations',
+        description: 'Etlas is built to work with what you already have. Connect to HR and payroll platforms, trigger alarms via GPIO, and extend functionality through our REST API — open architecture, no lock-in.',
+    },
 ]
 
 export default function Features(){
     return(
         <div id="etlas_features" className="features_section">
             <div className="features_inner">
-
-                {/* ── Product showcase — sits above feature cards ── */}
-                <div className="showcase_block">
-                    <div className="showcase_img_card">
-                        <img alt='Etlas platform' src={featureImg} />
-                    </div>
-                    <div className="showcase_meta">
-                        <div className="showcase_meta_left">
-                            <h3>All-in-one solution</h3>
-                            <p>Our code, our hardware</p>
-                        </div>
-                        <div className="showcase_meta_right">
-                            <p>Etlas's robust hardware and user-friendly software work in perfect harmony to enhance the security of your spaces. Remotely manage your locations, streamline operations, and stay compliant with ease.</p>
-                        </div>
-                    </div>
-                    <div className="showcase_actions">
-                        <a href="#message_form_section" className="showcase_btn_primary">Get in touch</a>
-                        <a href="#solution" className="showcase_btn_outline">Product overview</a>
-                    </div>
-                </div>
-
-                {/* ── Feature cards grid ── */}
+                <h4 data-animate>The Complete Security Stack</h4>
+                <p className="features_subtitle" data-animate style={{'--anim-delay': '0.1s'}}>Everything you need to manage physical security — in one platform.</p>
                 <div className="features_grid">
-                    {features.map((f, i) => (
-                        <div className="feature_card" key={i}>
+                    {stack.map((item, i) => (
+                        <div className="feature_card" key={i} data-animate style={{'--anim-delay': `${0.05 * i}s`}}>
                             <div className="feature_card_img">
-                                <img alt='' src={f.icon} />
+                                <img alt='' src={item.icon} />
                             </div>
-                            <h5>{f.title}</h5>
-                            <p>{f.desc}</p>
+                            <h5>{item.title}</h5>
+                            <p>{item.description}</p>
                         </div>
                     ))}
+                    <div className="feature_card feature_card--cta-b" data-animate style={{'--anim-delay': '0.25s'}}>
+                        <h5>Not sure what you need?</h5>
+                        <p>Let us assess your site and recommend the right setup.</p>
+                        <a href="/#contact" className="feature_cta_btn feature_cta_btn--solid">Get in Touch</a>
+                    </div>
                 </div>
-
             </div>
         </div>
     )

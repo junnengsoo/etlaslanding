@@ -1,71 +1,40 @@
 import React from "react";
 import './index.css'
 import logo from '../../asset/logoImg.png'
-import fbIcon from '../../asset/fbIcon.png'
-import pintrest from '../../asset/pinterest.png'
-import instagram from '../../asset/instagram.png'
-import titter from '../../asset/twitter.png'
-import youtube from '../../asset/youtube.png'
-
-
 
 export default function Footer(){
     return(
-        <div className="footer_section" >
-            <div className="footer">
+        <div className="footer_section">
+            <div className="footer_inner">
 
-                <div className="footer_first_part">
-                    <div className="footer_logo" >
-                    <img  alt='' src={logo} />
-                    <p>Etlas</p>
+                <div className="footer_brand">
+                    <div className="footer_logo">
+                        <img alt='Etlas' src={logo} />
+                        <span>Etlas</span>
                     </div>
-                    {/**<button>Get Started</button>
-                    <div className="social_icons" >
-                        <img alt='' src={fbIcon} />
-                        <img alt='' src={instagram} />
-                        <img alt='' src={pintrest} />
-                        <img alt='' src={youtube} />
-                        <img alt='' src={titter} />
-                    </div>
-                    */}
+                    <p className="footer_tagline">Unified physical security — access control, surveillance, and attendance in one platform.</p>
                 </div>
 
                 <div className="footer_links">
-                    <h6>Our Solution</h6>
-                    <a href="#">Unified Security Platform</a>
-                    <a href="#">Modern. Intuitive. User-centric</a>
-                    <a href="#">Access from Anywhere</a>
-                    <a href="#">Flexibility</a>
-                    <a href="#">Modularity</a>
-                    <a href="#">Our code. Our hardware. </a>
+                    <h6>Product</h6>
+                    <a href="#etlas_features">Access Control</a>
+                    <a href="#etlas_features">Video Surveillance</a>
+                    <a href="#etlas_features">Visitor Management</a>
+                    <a href="#etlas_features">Time &amp; Attendance</a>
+                    <a href="#etlas_features">Integrations</a>
                 </div>
+
                 <div className="footer_links">
                     <h6>Company</h6>
-                    
-                    <a href="#message_form_section">Get Quote</a>
-                    <a href="https://isssecurity.sg">Integrated Security Solutions</a>
-                    
-    
+                    <a href="/partners">Partners</a>
+                    <a href="https://isssecurity.sg" target="_blank" rel="noreferrer">Integrated Security Solutions</a>
                 </div>
-                <div className="footer_links">
-                   {/* <h6>Help</h6>
-                    <a href="#">Support</a>
-                    <a href="#">Contact</a>
-                    <a href="#">Press</a>
-                */ }
-                </div>
+
 
             </div>
 
-            <div className="footer_nav">
-                <p>© 2023 Etlas. All Rights Reserved</p>
-                {/*
-                <div>
-                    <a href="#">Cookies</a>
-                    <a href="#">Privacy</a>
-                    <a href="#">Terms</a>
-                </div>
-                */ }
+            <div className="footer_bottom">
+                <p>© 2026 Etlas. All Rights Reserved.</p>
             </div>
         </div>
     )

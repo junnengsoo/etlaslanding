@@ -4,7 +4,7 @@ import "./index.css";
 export default function AboutSection() {
   return (
     <div id='about' className="about_section">
-      <div className="about_txt">
+      <div className="about_txt" data-animate>
         <h4>About Us</h4>
         <p>
           We are a team of engineers and security professionals who strive to

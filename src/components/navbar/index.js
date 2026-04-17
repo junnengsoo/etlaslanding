@@ -5,7 +5,7 @@ import OutsideClickHandler from "react-outside-click-handler/build/OutsideClickH
 
 function useScrollToTop() {
     useEffect(() => {
-        if (window.scrollY > 0) {
+        if (window.scrollY > 0 && !window.location.hash) {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     }, []);
@@ -33,10 +33,10 @@ export default function Navbar() {
                 <div className="nav_inner">
                     <input type="checkbox" checked={navState} id="nav-check" readOnly />
                     <div className="nav-header">
-                        <div className="nav-title">
+                        <a href="/" className="nav-title">
                             <img alt='' src={logo} />
                             Etlas
-                        </div>
+                        </a>
                     </div>
                     <div className="nav-btn">
                         <label onClick={() => setNavState(s => !s)} htmlFor="nav-check">
@@ -47,10 +47,10 @@ export default function Navbar() {
                     </div>
 
                     <div className="nav-links">
-                        <a href="/products">Products</a>
-                        <a href="/partners">Partners</a>
-                        <a href="/pricing">Pricing</a>
-                        <button onClick={close}><a href="#message_form_section">Enquiry</a></button>
+                        <a href="/#etlas_features">Solutions</a>
+                        <a href="/#industries">Industries</a>
+                        <a href="/how-it-works">How It Works</a>
+                        <button onClick={close}><a href="/#contact">Get in Touch</a></button>
                     </div>
                 </div>
             </div>

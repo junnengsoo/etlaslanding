@@ -88,31 +88,46 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    gap: 0;
 }
 
-.form_inps > div{
+.form_inps_row{
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    gap: 1.5em;
 }
 
-.form_inps > div input{
-    width: 48% !important;
+.form_inps_row input,
+.form_inps_row select{
+    flex: 1;
+    min-width: 0;
 }
 
-.form_inps input{
+.form_inps input,
+.form_inps select{
     width: 100%;
-    margin: 1.4em 0;
+    margin: 1.2em 0 0;
     border-top: none;
     border-left: none;
     border-right: none;
     font-size: 15px;
     font-family: 'main_font';
-    padding: 6px 2px 6px 2px;
+    color: #333;
+    padding: 6px 2px;
     outline: none;
     border-bottom: 1px solid #C2C2C2;
     background: transparent;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+.form_inps select{
+    color: rgba(0,0,0,.45);
+}
+
+.form_inps select:valid{
+    color: #333;
 }
 
 .message_form button{
