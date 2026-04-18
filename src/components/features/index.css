@@ -48,12 +48,6 @@
 .feature_card{
     display: flex;
     flex-direction: column;
-    transition: transform 0.22s ease, box-shadow 0.22s ease;
-}
-
-.feature_card:hover{
-    transform: translateY(-5px);
-    box-shadow: 0 10px 36px rgba(27,41,58,.1);
 }
 
 /* Square image area */

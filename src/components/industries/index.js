@@ -9,7 +9,7 @@ const industries = [
         title: 'Fitness & Wellness',
         img: fitnessGym,
         subtitle: 'Frictionless access for every member, every visit',
-        href: '/industries/fitness',
+        href: '/#contact',
         points: [
             'Biometric and mobile entry — no cards to lose or share',
             'Auto-revoke access when membership expires',
@@ -20,7 +20,7 @@ const industries = [
         title: 'Corporate Offices & Spaces',
         img: corporateOffice,
         subtitle: 'Manage your people, visitors, and spaces in one place',
-        href: '/industries/corporate',
+        href: '/#contact',
         points: [
             'Pre-register visitors with auto-generated passes',
             'Schedule access by role, floor, or shift',
@@ -31,7 +31,7 @@ const industries = [
         title: 'Worksites',
         img: constructionSite,
         subtitle: 'Site security without permanent infrastructure',
-        href: '/industries/worksites',
+        href: '/#contact',
         points: [
             'Issue and revoke temporary contractor credentials instantly',
             'Mobile management — no on-site IT required',
