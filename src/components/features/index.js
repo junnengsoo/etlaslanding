@@ -1,5 +1,6 @@
 import React from "react";
 import './index.css'
+import { goToContact } from '../../utils/goToContact'
 import accessControlCard from '../../asset/accessControlCard.png'
 import cctvCard from '../../asset/CCTVCard.png'
 import visitorManagementCard from '../../asset/VisitorManagementSystemCard.png'
@@ -53,7 +54,7 @@ export default function Features(){
                     <div className="feature_card feature_card--cta-b" data-animate style={{'--anim-delay': '0.25s'}}>
                         <h5>Not sure what you need?</h5>
                         <p>Let us assess your site and recommend the right setup.</p>
-                        <a href="/#contact" className="feature_cta_btn feature_cta_btn--solid">Get in Touch</a>
+                        <a href="/#contact" onClick={goToContact} className="feature_cta_btn feature_cta_btn--solid">Get in Touch</a>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,7 @@
 import React from "react"
 import './index.css'
 import hero_products from '../../asset/HeroProducts.png'
+import { goToContact } from '../../utils/goToContact'
 
 // Replace src: null with your actual logo imports once available
 // e.g. import logo1 from '../../asset/clients/company1.png'
@@ -20,7 +21,7 @@ export default function Banner(){
                     <h3 className="hero-anim-1">Unifying Your Security</h3>
                     <p className="hero-anim-2">Etlas is Singapore's only homegrown modern physical security platform. We design, install, and manage your complete security stack — end to end.</p>
                     <div className="hero-anim-3">
-                        <button><a href="/#contact">Get in Touch</a></button>
+                        <button onClick={goToContact}>Get in Touch</button>
                     </div>
                 </div>
 

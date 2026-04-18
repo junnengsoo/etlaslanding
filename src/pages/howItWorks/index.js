@@ -3,6 +3,7 @@ import Navbar from "../../components/navbar";
 import Footer from "../../components/footer";
 import './index.css';
 import useScrollAnimation from "../../hooks/useScrollAnimation";
+import { goToContact } from '../../utils/goToContact';
 
 const steps = [
     {
@@ -63,7 +64,7 @@ export default function HowItWorks() {
             <div className="hiw_cta_section">
                 <div className="hiw_cta_inner" data-animate>
                     <h3>Ready to secure your site?</h3>
-                    <a href="/#contact" className="hiw_cta_btn">Get in Touch</a>
+                    <a href="/#contact" onClick={goToContact} className="hiw_cta_btn">Get in Touch</a>
                 </div>
             </div>
 

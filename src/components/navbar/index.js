@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import './index.css'
 import logo from '../../asset/logoImg.png'
 import OutsideClickHandler from "react-outside-click-handler/build/OutsideClickHandler";
+import { goToContact } from '../../utils/goToContact';
 
 function useScrollToTop() {
     useEffect(() => {
@@ -50,7 +51,7 @@ export default function Navbar() {
                         <a href="/#etlas_features">Solutions</a>
                         <a href="/#industries">Industries</a>
                         <a href="/how-it-works">How It Works</a>
-                        <button onClick={close}><a href="/#contact">Get in Touch</a></button>
+                        <button onClick={e => { close(); goToContact(e); }}>Get in Touch</button>
                     </div>
                 </div>
             </div>
