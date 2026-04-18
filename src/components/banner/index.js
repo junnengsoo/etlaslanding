@@ -1,32 +1,47 @@
 import React from "react"
 import './index.css'
-import banner_img from '../../asset/bannerImg.png'
-import banner_icons_img from '../../asset/bannerIcons.png'
-import bannerMobIcons from '../../asset/mobIcons.png'
-import whatsappButton from '../../asset/ws.png'
-import { useState } from "react"
+import hero_products from '../../asset/HeroProducts.png'
+
+// Replace src: null with your actual logo imports once available
+// e.g. import logo1 from '../../asset/clients/company1.png'
+const logos = [
+    { name: 'Company 1', src: null },
+    { name: 'Company 2', src: null },
+    { name: 'Company 3', src: null },
+    { name: 'Company 4', src: null },
+    { name: 'Company 5', src: null },
+]
 
 export default function Banner(){
-
-    const [email, setEmail] = useState('')
-
     return(
-        <div id='home' className="banner_section" >
-            <img className="banner_mob_icons" alt='' src={bannerMobIcons} />
-            <div className="banner_txt">
-                <h3>Unifying Your Security</h3>
-                <p>Etlas provides a single web-based platform for all your security management needs. Powerful. Modern. Flexible.</p>
-                <div>
-                    {/*<input id="email" placeholder="Email address ...." onInput={e => setEmail(e.target.value)}/>
-                    
-                    <a href={"https://wa.me/6594569932/?text=Hi!"}><img alt='' src={whatsappButton} /></a>*/}
-                   <button><a href="https://wa.me/6594569932/?text=Hi!">Get in touch</a></button>
-                   </div>
+        <div id='home' className="banner_section">
+            <div className="banner_inner">
+                <div className="banner_txt">
+                    <h3 className="hero-anim-1">Unifying Your Security</h3>
+                    <p className="hero-anim-2">Etlas is Singapore's only homegrown modern physical security platform. We design, install, and manage your complete security stack — end to end.</p>
+                    <div className="hero-anim-3">
+                        <button><a href="/#contact">Get in Touch</a></button>
+                    </div>
+                </div>
+
             </div>
 
-            <div className="banner_img">
-                <img className="banner_main_img" alt='' src={banner_img} />
-                <img className="banner_icons" alt='' src={banner_icons_img} />
+            <div className="banner_img hero-anim-img">
+                <img className="banner_main_img" alt='Etlas platform' src={hero_products} />
+            </div>
+
+            <div className="banner_clients hero-anim-clients">
+                <p className="banner_clients_label">Trusted by organisations across Singapore</p>
+                <div className="banner_logos">
+                    {logos.map((logo, i) => (
+                        <div className="banner_logo_slot" key={i}>
+                            {logo.src
+                                ? <img src={logo.src} alt={logo.name} />
+                                : <span>{logo.name}</span>
+                            }
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     )

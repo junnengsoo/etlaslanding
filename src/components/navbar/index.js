@@ -1,37 +1,59 @@
-import React, {useState} from "react";
+import React, { useState, useEffect } from "react";
 import './index.css'
 import logo from '../../asset/logoImg.png'
 import OutsideClickHandler from "react-outside-click-handler/build/OutsideClickHandler";
 
+function useScrollToTop() {
+    useEffect(() => {
+        if (window.scrollY > 0 && !window.location.hash) {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    }, []);
+}
 
 export default function Navbar() {
 
-    const [navState , setNavState]= useState(false)
+    useScrollToTop();
+
+    const [navState, setNavState] = useState(false);
+    const close = () => setNavState(false);
+
     return (
-<OutsideClickHandler onOutsideClick={()=>setNavState(false)} >
-        <div class="nav">
-            <input type="checkbox" checked={navState} id="nav-check" />
-            <div class="nav-header">
-                <div class="nav-title">
-                    <img alt='' src={logo} />
-                    Etlas
+        <OutsideClickHandler onOutsideClick={close}>
+            {/* ── Announcement bar ── */}
+            <div className="top_bar">
+                <div className="top_bar_inner">
+                    <span>Sales: </span>
+                    <a href="tel:+6594569932">+65 9456 9932</a>
                 </div>
             </div>
-            <div class="nav-btn">
-                <label onClick={()=>{!navState?setNavState(true):setNavState(false)}} for="nav-check">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </label>
-            </div>
 
-            <div class="nav-links">
-                <a onClick={()=>setNavState(false)} href="#home">Home</a>
-                <a onClick={()=>setNavState(false)} href="#etlas_features"> Our Solution </a>
-                <a onClick={()=>setNavState(false)} href="#about">About Us</a>
-               <button onClick={()=>setNavState(false)}><a href="#message_form_section">Enquiry</a></button>
+            {/* ── Main navbar ── */}
+            <div className="nav">
+                <div className="nav_inner">
+                    <input type="checkbox" checked={navState} id="nav-check" readOnly />
+                    <div className="nav-header">
+                        <a href="/" className="nav-title">
+                            <img alt='' src={logo} />
+                            Etlas
+                        </a>
+                    </div>
+                    <div className="nav-btn">
+                        <label onClick={() => setNavState(s => !s)} htmlFor="nav-check">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </label>
+                    </div>
+
+                    <div className="nav-links">
+                        <a href="/#etlas_features">Solutions</a>
+                        <a href="/#industries">Industries</a>
+                        <a href="/how-it-works">How It Works</a>
+                        <button onClick={close}><a href="/#contact">Get in Touch</a></button>
+                    </div>
+                </div>
             </div>
-        </div>
-          </OutsideClickHandler>
+        </OutsideClickHandler>
     )
 }

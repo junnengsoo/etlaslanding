@@ -1,0 +1,83 @@
+@font-face {
+    font-family: 'main_font';
+    src: url(../../fonts/Montserrat-Regular.ttf);
+}
+
+.clients_section {
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0,0,0,.07);
+    padding: 2.5em 0;
+}
+
+.clients_inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 4em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5em;
+}
+
+.clients_label {
+    font-size: 13px;
+    font-family: 'main_font';
+    font-weight: 600;
+    color: rgba(0,0,0,.4);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 0;
+}
+
+.clients_logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3em;
+    width: 100%;
+}
+
+/* Each logo slot — swap the placeholder styling once real logos are added */
+.client_logo_slot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    opacity: 0.55;
+    transition: opacity .2s;
+    filter: grayscale(1);
+}
+
+.client_logo_slot:hover {
+    opacity: 0.9;
+    filter: grayscale(0);
+}
+
+.client_logo_slot img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Placeholder text shown until real logos are added */
+.client_logo_slot span {
+    font-size: 15px;
+    font-family: 'main_font';
+    font-weight: 700;
+    color: rgba(0,0,0,.3);
+    letter-spacing: 0.04em;
+    border: 1.5px dashed rgba(0,0,0,.2);
+    padding: 0.4em 1.2em;
+    border-radius: 6px;
+}
+
+@media (max-width:1200px) {
+    .clients_inner { padding: 0 2.5em; }
+}
+
+@media (max-width:700px) {
+    .clients_logos { gap: 2em; }
+    .clients_inner { padding: 0 1.5em; }
+}
