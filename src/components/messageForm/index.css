@@ -130,6 +130,30 @@
     color: #333;
 }
 
+.form_success{
+    padding: 2em 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.form_success p{
+    font-size: 17px;
+    font-family: 'main_font';
+    font-weight: 600;
+    color: #1b293a;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.form_error{
+    font-size: 14px;
+    font-family: 'main_font';
+    color: #c0392b;
+    margin: 0.5em 0 0;
+}
+
 .message_form button{
     height: 52px;
     font-size: 17px;

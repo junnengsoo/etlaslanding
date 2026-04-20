@@ -11,7 +11,7 @@ const industries = [
         subtitle: 'Frictionless access for every member, every visit',
         href: '/#contact',
         points: [
-            'Biometric and mobile entry — no cards to lose or share',
+            'Biometric and mobile phone access — no cards to lose or share',
             'Auto-revoke access when membership expires',
             'Track attendance for payroll and compliance',
         ]
@@ -35,7 +35,8 @@ const industries = [
         points: [
             'Issue and revoke temporary contractor credentials instantly',
             'Mobile management — no on-site IT required',
-            'GPIO-ready for alarms and emergency response',
+            'Hardware-ready for alarms and emergency response',
+            'Fully integrated with EPSS software',
         ]
     },
 ]

@@ -24,8 +24,7 @@ export default function Navbar() {
             {/* ── Announcement bar ── */}
             <div className="top_bar">
                 <div className="top_bar_inner">
-                    <span>Sales: </span>
-                    <a href="tel:+6594569932">+65 9456 9932</a>
+                    <a href="tel:+6589243354">+65 8924 3354</a>
                 </div>
             </div>
 

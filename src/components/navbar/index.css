@@ -35,12 +35,6 @@ body {
     gap: 0.4em;
 }
 
-.top_bar span {
-    font-size: 13px;
-    font-family: 'main_font';
-    font-weight: 500;
-    color: rgba(0,0,0,.5);
-}
 
 .top_bar a {
     font-size: 13px;

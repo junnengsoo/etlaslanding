@@ -19,7 +19,7 @@ export default function Banner(){
             <div className="banner_inner">
                 <div className="banner_txt">
                     <h3 className="hero-anim-1">Unifying Your Security</h3>
-                    <p className="hero-anim-2">Etlas is Singapore's only homegrown modern physical security platform. We design, install, and manage your complete security stack — end to end.</p>
+                    <p className="hero-anim-2">Etlas is Singapore's only homegrown modern security systems platform. We design, install, and manage your complete security stack — end to end.</p>
                     <div className="hero-anim-3">
                         <button onClick={goToContact}>Get in Touch</button>
                     </div>

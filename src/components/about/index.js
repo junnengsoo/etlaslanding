@@ -7,20 +7,8 @@ export default function AboutSection() {
       <div className="about_txt" data-animate>
         <h4>About Us</h4>
         <p>
-          We are a team of engineers and security professionals who strive to
-          create better products for our users.
+          Built by a team with roots in Singapore's security industry, Etlas brings together decades of hands-on SI experience with modern software engineering. Our founders come from established players in the space, and we started Etlas to do things differently — delivering smarter, more adaptable security systems without the complexity or cost of legacy solutions.
         </p>
-        <p>
-          With experience across a broad range of technology, we believe security
-          should be delivered to users with ease and simplicity.
-        </p>
-        <p>
-          Etlas is part of the product portfolio of Integrated Security
-          Solutions. Incorporated in 2000, we have a track record of consulting,
-          designing and building security and digital solutions for users in
-          multiple industries.
-        </p>
-        <button><a href="https://isssecurity.sg">Learn More</a></button>
       </div>
     </div>
   );

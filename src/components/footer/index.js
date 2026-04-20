@@ -12,7 +12,7 @@ export default function Footer(){
                         <img alt='Etlas' src={logo} />
                         <span>Etlas</span>
                     </div>
-                    <p className="footer_tagline">Unified physical security — access control, surveillance, and attendance in one platform.</p>
+                    <p className="footer_tagline">Unified security systems — access control, surveillance, and attendance in one platform.</p>
                 </div>
 
                 <div className="footer_links">
@@ -26,8 +26,8 @@ export default function Footer(){
 
                 <div className="footer_links">
                     <h6>Company</h6>
-                    <a href="/partners">Partners</a>
-                    <a href="https://isssecurity.sg" target="_blank" rel="noreferrer">Integrated Security Solutions</a>
+                    <a href="/#contact">Get in Touch</a>
+                    <a href="/how-it-works">How It Works</a>
                 </div>
 
 
