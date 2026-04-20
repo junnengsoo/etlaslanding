@@ -1,6 +1,10 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 import "./index.css";
+
+const SERVICE_ID  = 'gmail_service';
+const TEMPLATE_ID = 'contact_us';
+const PUBLIC_KEY  = 'RjFzYKQ9BvY0FvBMs';
 
 const steps = [
     { icon: '📋', text: 'We assess your site within 24 hours' },
@@ -16,13 +20,29 @@ export default function MessageForm() {
   const [phone,     setPhone]     = useState('')
   const [company,   setCompany]   = useState('')
   const [siteType,  setSiteType]  = useState('')
+  const [status,    setStatus]    = useState('idle') // idle | sending | success | error
 
   const sendMsg = async () => {
-    const subject = 'Site Assessment Request'
-    const body    = `From: ${firstName} ${lastName} | Email: ${email} | Phone: ${phone} | Company: ${company} | Site type: ${siteType}`
-    const apilink = `https://eserver.etlas.sg/postEmail/${subject}/${body}`
-    alert("Thank you. We will contact you as soon as possible.");
-    window.open(apilink);
+    setStatus('sending')
+    try {
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          name:    `${firstName} ${lastName}`,
+          email:   email,
+          phone:   phone,
+          company: company,
+          site:    siteType,
+          time:    new Date().toLocaleString('en-SG', { timeZone: 'Asia/Singapore' }),
+        },
+        PUBLIC_KEY
+      )
+      setStatus('success')
+    } catch (err) {
+      console.error(err)
+      setStatus('error')
+    }
   }
 
   return (
@@ -35,28 +55,42 @@ export default function MessageForm() {
             <h4>Get in Touch</h4>
             <p>Let us know how we can help</p>
 
-            <div className="form_inps">
-              <div className="form_inps_row">
-                <input placeholder="First name" onInput={e => setFirstname(e.target.value)} />
-                <input placeholder="Last name"  onInput={e => setLastname(e.target.value)} />
+            {status === 'success' ? (
+              <div className="form_success">
+                <p>Thank you — we'll be in touch within 24 hours.</p>
               </div>
-              <div className="form_inps_row">
-                <input placeholder="Email"      onInput={e => setEmail(e.target.value)} />
-                <input placeholder="Phone"      onInput={e => setPhone(e.target.value)} />
-              </div>
-              <div className="form_inps_row">
-                <input placeholder="Company"    onInput={e => setCompany(e.target.value)} />
-                <select defaultValue="" onChange={e => setSiteType(e.target.value)}>
-                  <option value="" disabled>Type of site</option>
-                  <option value="Office">Office</option>
-                  <option value="Fitness & Wellness">Fitness &amp; Wellness</option>
-                  <option value="Worksite">Worksite</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
-            </div>
+            ) : (
+              <>
+                <div className="form_inps">
+                  <div className="form_inps_row">
+                    <input placeholder="First name" onInput={e => setFirstname(e.target.value)} />
+                    <input placeholder="Last name"  onInput={e => setLastname(e.target.value)} />
+                  </div>
+                  <div className="form_inps_row">
+                    <input placeholder="Email"      onInput={e => setEmail(e.target.value)} />
+                    <input placeholder="Phone"      onInput={e => setPhone(e.target.value)} />
+                  </div>
+                  <div className="form_inps_row">
+                    <input placeholder="Company"    onInput={e => setCompany(e.target.value)} />
+                    <select defaultValue="" onChange={e => setSiteType(e.target.value)}>
+                      <option value="" disabled>Type of site</option>
+                      <option value="Office">Office</option>
+                      <option value="Fitness & Wellness">Fitness &amp; Wellness</option>
+                      <option value="Worksite">Worksite</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+                </div>
 
-            <button onClick={sendMsg}>Submit</button>
+                {status === 'error' && (
+                  <p className="form_error">Something went wrong — please try again or contact us directly.</p>
+                )}
+
+                <button onClick={sendMsg} disabled={status === 'sending'}>
+                  {status === 'sending' ? 'Sending...' : 'Submit'}
+                </button>
+              </>
+            )}
           </div>
         </div>
 
@@ -77,7 +111,7 @@ export default function MessageForm() {
           <div className="form_contact_row">
             <div className="form_contact_block">
               <strong>Call us</strong>
-              <a href="tel:+6594569932">+65 9456 9932</a>
+              <a href="tel:+6589243354">+65 8924 3354</a>
             </div>
             <div className="form_contact_block">
               <strong>Email us</strong>
@@ -85,7 +119,7 @@ export default function MessageForm() {
             </div>
             <div className="form_contact_block">
               <strong>WhatsApp</strong>
-              <a href="https://wa.me/6594569932/?text=Hi!" target="_blank" rel="noreferrer">Message us</a>
+              <a href="https://wa.me/6589243354/?text=Hi!" target="_blank" rel="noreferrer">Message us</a>
             </div>
           </div>
         </div>

@@ -16,12 +16,12 @@ const stack = [
     {
         icon: cctvCard,
         title: 'Video Surveillance (CCTV)',
-        description: 'Monitor every corner of your site with live and recorded footage, unified inside the Etlas dashboard. When an alert fires, jump directly to the linked footage — no switching between systems, no wasted time.',
+        description: 'Monitor your site with a unified view on the Etlas platform. Integrate video alerts with Etlas and access linked footage seamlessly — no switching between systems, no wasted time.',
     },
     {
         icon: visitorManagementCard,
         title: 'Visitor Management',
-        description: 'Pre-register visitors before they arrive and generate passes automatically at check-in. Every visit is logged with a full audit trail, keeping you compliant and in control.',
+        description: 'Comprehensive VMS provides multiple workflows which include pre-registration, admin review/approval, on-demand access and audit logs.',
     },
     {
         icon: timeAttendanceCard,
@@ -31,7 +31,7 @@ const stack = [
     {
         icon: etlasBoardImg,
         title: 'Integrations',
-        description: 'Etlas is built to work with what you already have. Connect to HR and payroll platforms, trigger alarms via GPIO, and extend functionality through our REST API — open architecture, no lock-in.',
+        description: 'Etlas is built to work with what you already have. Connect to HR and payroll platforms, trigger alarms via our hardware and extend functionality through our REST API — open architecture, no lock-in.',
     },
 ]
 
@@ -40,7 +40,7 @@ export default function Features(){
         <div id="etlas_features" className="features_section">
             <div className="features_inner">
                 <h4 data-animate>The Complete Security Stack</h4>
-                <p className="features_subtitle" data-animate style={{'--anim-delay': '0.1s'}}>Everything you need to manage physical security — in one platform.</p>
+                <p className="features_subtitle" data-animate style={{'--anim-delay': '0.1s'}}>Everything you need to manage in one platform.</p>
                 <div className="features_grid">
                     {stack.map((item, i) => (
                         <div className="feature_card" key={i} data-animate style={{'--anim-delay': `${0.05 * i}s`}}>
