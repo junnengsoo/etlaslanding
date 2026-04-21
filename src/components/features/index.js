@@ -11,7 +11,7 @@ const stack = [
     {
         icon: accessControlCard,
         title: 'Access Control',
-        description: 'Control who enters your site, when, and where — from a single dashboard. Support for card, PIN, mobile, and biometric credentials means every person gets the right level of access. Revoke or grant access instantly, from anywhere.',
+        description: 'Control who enters your site, when, and where — from a single dashboard. Support for multiple authentication methods including card, PIN, QR, and biometric credentials means every person gets the right level of access. Revoke or grant access instantly, from anywhere.',
     },
     {
         icon: cctvCard,
@@ -45,7 +45,7 @@ export default function Features(){
                     {stack.map((item, i) => (
                         <div className="feature_card" key={i} data-animate style={{'--anim-delay': `${0.05 * i}s`}}>
                             <div className="feature_card_img">
-                                <img alt='' src={item.icon} />
+                                <img alt={item.title + ' — Etlas security system Singapore'} src={item.icon} />
                             </div>
                             <h5>{item.title}</h5>
                             <p>{item.description}</p>

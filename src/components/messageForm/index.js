@@ -119,7 +119,7 @@ export default function MessageForm() {
             </div>
             <div className="form_contact_block">
               <strong>WhatsApp</strong>
-              <a href="https://wa.me/6589243354/?text=Hi!" target="_blank" rel="noreferrer">Message us</a>
+              <a href="https://wa.me/6589243354/?text=Hi!%20I'm%20interested%20to%20book%20a%20consultation." target="_blank" rel="noreferrer">Message us</a>
             </div>
           </div>
         </div>

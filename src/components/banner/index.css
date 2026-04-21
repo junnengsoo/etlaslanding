@@ -58,7 +58,7 @@ body { overflow-x: hidden; }
     max-width: 640px;
 }
 
-.banner_txt h3{
+.banner_txt h1{
     font-size: 64px;
     font-family: 'main_font';
     color: #fff;
@@ -123,28 +123,28 @@ body { overflow-x: hidden; }
 }
 
 @media (max-width:1024px) {
-    .banner_txt h3{
+    .banner_txt h1{
         font-size: 48px;
     }
 }
 
-/* ── Client logos — inside hero ── */
+/* ── Client logos — white pill per logo ── */
 .banner_clients{
     position: relative;
     z-index: 2;
     width: 100%;
-    padding: 2.5em 4em 3em;
+    padding: 2em 4em 3em;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1em;
+    gap: 1.2em;
 }
 
 .banner_clients_label{
     font-size: 12px;
     font-family: 'main_font';
     font-weight: 600;
-    color: rgba(255,255,255,.45);
+    color: rgba(255,255,255,.5);
     text-transform: uppercase;
     letter-spacing: 0.09em;
     margin: 0;
@@ -155,38 +155,30 @@ body { overflow-x: hidden; }
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 2em;
+    gap: 1em;
 }
 
 .banner_logo_slot{
     display: flex;
     align-items: center;
-    height: 36px;
-    opacity: 0.6;
-    transition: opacity .2s;
-    filter: brightness(0) invert(1); /* makes logos white */
+    justify-content: center;
+    height: 56px;
+    padding: 0 1.4em;
+    background: rgba(255,255,255,0.92);
+    border-radius: 999px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+    transition: background .2s, box-shadow .2s;
 }
 
 .banner_logo_slot:hover{
-    opacity: 1;
+    background: #fff;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.18);
 }
 
 .banner_logo_slot img{
-    height: 100%;
+    height: 36px;
     width: auto;
     object-fit: contain;
-}
-
-/* Placeholder until real logos are added */
-.banner_logo_slot span{
-    font-size: 14px;
-    font-family: 'main_font';
-    font-weight: 700;
-    color: rgba(255,255,255,.5);
-    border: 1.5px dashed rgba(255,255,255,.25);
-    padding: 0.3em 1em;
-    border-radius: 6px;
-    letter-spacing: 0.03em;
 }
 
 /* ── Product screenshot ── */
@@ -213,7 +205,7 @@ body { overflow-x: hidden; }
     .banner_inner{
         padding: 0 1.5em;
     }
-    .banner_txt h3{
+    .banner_txt h1{
         font-size: 34px;
     }
     .banner_txt p{
