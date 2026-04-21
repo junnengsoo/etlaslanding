@@ -4,6 +4,15 @@ import logo from '../../asset/logoImg.png'
 import OutsideClickHandler from "react-outside-click-handler/build/OutsideClickHandler";
 import { goToContact } from '../../utils/goToContact';
 
+function goToSection(e, id) {
+    e.preventDefault();
+    if (window.location.pathname === '/') {
+        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+        window.location.href = `/#${id}`;
+    }
+}
+
 function useScrollToTop() {
     useEffect(() => {
         if (window.scrollY > 0 && !window.location.hash) {
@@ -47,8 +56,8 @@ export default function Navbar() {
                     </div>
 
                     <div className="nav-links">
-                        <a href="/#etlas_features">Solutions</a>
-                        <a href="/#industries">Industries</a>
+                        <a href="/#etlas_features" onClick={e => { close(); goToSection(e, 'etlas_features'); }}>Solutions</a>
+                        <a href="/#industries" onClick={e => { close(); goToSection(e, 'industries'); }}>Industries</a>
                         <a href="/how-it-works">How It Works</a>
                         <button onClick={e => { close(); goToContact(e); }}>Get in Touch</button>
                     </div>
