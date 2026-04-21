@@ -1,14 +1,20 @@
 import React from "react";
 import './index.css'
 
-// Replace these with your actual logo imports, e.g.:
-// import logo1 from '../../asset/clients/company1.png'
+import logoFrasers from '../../asset/companyLogos/FCT.png'
+import logoStamford from '../../asset/companyLogos/SA.avif'
+import logoAis from '../../asset/companyLogos/AIS.png'
+import logoInterplex from '../../asset/companyLogos/interplex.png'
+import logoTongren from '../../asset/companyLogos/tongrentang.png'
+import logoUoi from '../../asset/companyLogos/UOI.png'
+
 const logos = [
-    { name: 'Company 1', src: null },
-    { name: 'Company 2', src: null },
-    { name: 'Company 3', src: null },
-    { name: 'Company 4', src: null },
-    { name: 'Company 5', src: null },
+    { name: 'Frasers Centrepoint Trust', src: logoFrasers },
+    { name: 'Stamford American School', src: logoStamford },
+    { name: 'AIS', src: logoAis },
+    { name: 'Interplex Holdings', src: logoInterplex },
+    { name: 'Tong Ren Tang', src: logoTongren },
+    { name: 'UOI', src: logoUoi },
 ]
 
 export default function Clients() {

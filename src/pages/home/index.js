@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import Banner from "../../components/banner";
+import Clients from "../../components/clients";
 import Features from "../../components/features";
 import Industries from "../../components/industries";
 import Footer from "../../components/footer";
@@ -29,6 +30,7 @@ export default function Home() {
             <Navbar />
 
             <Banner />
+            <Clients />
             <Features />
             <Industries />
 

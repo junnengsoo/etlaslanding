@@ -51,7 +51,7 @@ export default function Industries() {
                     {industries.map((item, i) => (
                         <div className="industry_card" key={i} data-animate style={{'--anim-delay': `${0.1 * i}s`}}>
                             <div className="industry_card_img">
-                                <img src={item.img} alt={item.title} />
+                                <img src={item.img} alt={item.title + ' security systems Singapore'} />
                                 <div className="industry_card_img_overlay">
                                     <p className="industry_card_img_label">{item.title}</p>
                                 </div>
